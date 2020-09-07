@@ -15,14 +15,12 @@ mongoose.Promise = Promise;
 
 if (process.env.ENVIRONMENT === 'PRODUCTION') {
 	mongoose.connect(
-
-		`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?authSource=admin`,
+		`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`,
 	);
 }
 else {
-	mongoose.connect(
-		//'mongodb://productListUser:productListPassword@localhost:27017/promotions?authSource=admin'
-		'mongodb://productListUser:productListPassword@localhost:27017/promotions?authSource=admin')
+	mongoose.connect('mongodb+srv://productListUser:productListPassword@localhost:27017/promotions?authSource=admin')
+	//'mongodb://mongo:27017/promotions?authSource=admin')
 }
 
 const db = mongoose.connection;
