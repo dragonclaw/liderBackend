@@ -1,13 +1,17 @@
 Backend (NodeJS - ExpressJS - Mongoose - Docker)
 
-Local installation (npm install - npm run start)
-Tests: npm run test
+Local installation ($npm install - $npm run start)
+Tests: $npm run test
 
 Port: 8080
 
 Needed MongoDB image from Walmart Test running.
 
 (Issues with MongoDB image from Walmart, if root user don't have permissions to run docker, need to put sudo on Makefile or add current user as docker user)
+
+PS. If you need to instantiate locally, create .env file with this parameter:
+
+ENVIRONMENT:DEVELOPMENT
 
 Code coverage using Istanbul - NYC 
 
